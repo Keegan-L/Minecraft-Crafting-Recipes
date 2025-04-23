@@ -1,7 +1,23 @@
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
+from flask import send_from_directory
+from flask import session
+import os
+
 app = Flask(__name__)
+app.secret_key = 'minecraft_crafting_secret_key'  # Required for session
+
+# Initialize visited items in session if not exists
+@app.before_request
+def before_request():
+    if 'visited_items' not in session:
+        session['visited_items'] = []
+
+# Serve static files from data directory
+@app.route('/data/<path:filename>')
+def serve_data(filename):
+    return send_from_directory('data', filename)
 
 basics = [
     {
@@ -25,7 +41,7 @@ basics = [
         "prev": ["Wooden Plank"]
    },
     {
-        "name": "Torch"
+        "name": "Torch",
         "img": "",
         "desc": "Provides light and melts ice/snow.",
         "madeof": ["Stick, Coal"],
@@ -35,7 +51,7 @@ basics = [
         "prev": ["Stick"]
     },
     {
-        "name": "Crafting Table"
+        "name": "Crafting Table",
         "img": "",
         "desc": "Allows player to craft when right clicked.",
         "madeof": ["Wooden Plank"],
@@ -45,7 +61,7 @@ basics = [
         "prev": ["Torch"]
     },
     {
-        "name": "Furnace"
+        "name": "Furnace",
         "img": "",
         "desc": "Allows player to smelt (refine ores, cook food, etc.) when right clicked).",
         "madeof": ["Cobblestone"],
@@ -55,7 +71,7 @@ basics = [
         "prev": ["Crafting Table"]
     },
     {
-        "name": "Chest"
+        "name": "Chest",
         "img": "",
         "desc": "Used to store items.",
         "madeof": ["Wooden Plank"],
@@ -65,7 +81,7 @@ basics = [
         "prev": ["Furnace"]
    },
    {
-        "name": "Ladder"
+        "name": "Ladder",
         "img": "",
         "desc": "Allows player to climb vertically.",
         "madeof": ["Stick"],
@@ -75,7 +91,7 @@ basics = [
         "prev": ["Furnace"]
    },
    {
-        "name": "Fence"
+        "name": "Fence",
         "img": "",
         "desc": "Barrier that can't be jumped over.",
         "madeof": ["Wooden Plank", "Stick"],
@@ -85,7 +101,7 @@ basics = [
         "prev": ["Ladder"]
    },
    {
-        "name": "Boat"
+        "name": "Boat",
         "img": "",
         "desc": "Used to travel over water.",
         "madeof": ["Wooden Plank"],
@@ -95,7 +111,7 @@ basics = [
         "prev": ["Fence"]
    },
    {
-        "name": "Slab"
+        "name": "Slab",
         "img": "",
         "desc": "Used to create gradual slopes.",
         "madeof": ["Wooden Plank"],
@@ -105,7 +121,7 @@ basics = [
         "prev": ["Boat"]
    },
    {
-        "name": "Stairs"
+        "name": "Stairs",
         "img": "",
         "desc": "Used to build staircases.",
         "madeof": ["Wooden Plank"],
@@ -115,7 +131,7 @@ basics = [
         "prev": ["Slab"]
    },
    {
-        "name": "Door"
+        "name": "Door",
         "img": "",
         "desc": "Wooden doors can be opened by clicking or redstone power, Iron doors can only be opened by redstone power.",
         "madeof": ["Wooden Plank", "Iron Ingot"],
@@ -125,7 +141,7 @@ basics = [
         "prev": ["Stairs"]
    },
    {
-        "name": "Sign"
+        "name": "Sign",
         "img": "",
         "desc": "Can display text.",
         "madeof": ["Wooden Plank", "Stick"],
@@ -135,7 +151,7 @@ basics = [
         "prev": ["Door"]
    },
    {
-        "name": "Bed"
+        "name": "Bed",
         "img": "",
         "desc": "Used to forward from night to day.",
         "madeof": ["Wooden plank", "Wool"],
@@ -168,7 +184,7 @@ tools = [
         "prev": ["Wooden Plank"]
    },
    {
-        "name": "Shovel"
+        "name": "Shovel",
         "img": "",
         "desc": "Used to dig sand, gravel, dirt, grass, and snow faster.",
         "madeof": ["Sticks", "Wooden Plank", "Cobblestone", "Iron Ingots", "Gold Ingots", "Diamonds"],
@@ -178,7 +194,7 @@ tools = [
         "prev": ["Axe"]
    },
    {
-        "name": "Hoe"
+        "name": "Hoe",
         "img": "",
         "desc": "Used to till dirt blocks in preparation for growing crops.",
         "madeof": ["Sticks", "Wooden Plank", "Cobblestone", "Iron Ingots", "Gold Ingots", "Diamonds"],
@@ -188,7 +204,7 @@ tools = [
         "prev": ["Shovel"]
    },
    {
-        "name": "Fishing Rod"
+        "name": "Fishing Rod",
         "img": "",
         "desc": "Can be cast into water to catch fish.",
         "madeof": ["Stick", "String"],
@@ -198,7 +214,7 @@ tools = [
         "prev": ["Hoe"]
    },
    {
-        "name": "Flint & Steel"
+        "name": "Flint & Steel",
         "img": "",
         "desc": "Used to light fires, ignite TNT and open nether portals.",
         "madeof": ["Iron Ingot", "Flint"],
@@ -208,7 +224,7 @@ tools = [
         "prev": ["Fishing Rod"]
    },
    {
-        "name": "Compass"
+        "name": "Compass",
         "img": "",
         "desc": "Points to the spawn point.",
         "madeof": ["Iron Ingot", "Redstone"],
@@ -218,7 +234,7 @@ tools = [
         "prev": ["Flint & Steel"]
    },
    {
-        "name": "Bucket"
+        "name": "Bucket",
         "img": "",
         "desc": "Used to transport water, lava, and milk.",
         "madeof": ["Iron Ingot"],
@@ -228,7 +244,7 @@ tools = [
         "prev": ["Compass"]
    },
    {
-        "name": "Shears"
+        "name": "Shears",
         "img": "",
         "desc": "Used to collect wool from sheep and leaves from trees.",
         "madeof": ["Iron Ingot"],
@@ -261,7 +277,7 @@ defense = [
         "prev": ["Helmet"]
    },
    {
-        "name": "Leggings"
+        "name": "Leggings",
         "img": "",
         "desc": "Leg armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
@@ -271,7 +287,7 @@ defense = [
         "prev": ["Chestplate"]
    },
    {
-        "name": "Boots"
+        "name": "Boots",
         "img": "",
         "desc": "Foot armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
@@ -281,7 +297,7 @@ defense = [
         "prev": ["Leggings"]
    },
    {
-        "name": "Sword"
+        "name": "Sword",
         "img": "",
         "desc": "Deal damage to mobs and other players.",
         "madeof": ["Stick", "Wooden Planks", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
@@ -291,7 +307,7 @@ defense = [
         "prev": ["Boots"]
    },
    {
-        "name": "Bow"
+        "name": "Bow",
         "img": "",
         "desc": "Used to shoot arrows that deal damage to mobs and other players.",
         "madeof": ["Stick", "String"],
@@ -301,7 +317,7 @@ defense = [
         "prev": ["Sword"]
    },
    {
-        "name": "Arrow"
+        "name": "Arrow",
         "img": "",
         "desc": "Ammunition for bows.",
         "madeof": ["Stick", "Flint", "Feather"],
@@ -311,7 +327,7 @@ defense = [
         "prev": ["Bow"]
    },
    {
-        "name": "Scute"
+        "name": "Scute",
         "img": "",
         "desc": "Helmet that gives the player water breathing effect.",
         "madeof": ["Turtle Shell"],
@@ -321,7 +337,7 @@ defense = [
         "prev": ["Arrow"]
    },
    {
-        "name": "Crossbow"
+        "name": "Crossbow",
         "img": "",
         "desc": "Weapon used to fire arrows further and more accurately than a bow.",
         "madeof": ["Iron Ingot"],
@@ -334,41 +350,97 @@ defense = [
 
 # ROUTES
 
+@app.route('/')
+def index():
+    return render_template('index.html', 
+                         basics=basics, 
+                         tools=tools, 
+                         defense=defense,
+                         visited_items=session.get('visited_items', []))
+
 @app.route('/learn/<string:name>')
 def learn(name):
-    cat = []
-    selected = next((b for b in basics if b["name"] == name), None)
-    if selected is None:
-        selected = next((t for t in tools if t["name"] == name), None)
-        if selected is None:
-            selected = next((d for d in defense if d["name"] == name), None)
-            if selected is None:
-                return "item not found", 404
-            else:
-                c = defense
-                for i in basics:
-                    cat.append(i.name)
-        else:
-            c = tools
-            for i in basics:
-                cat.append(i.name)
-    else:
-        c = basics
-    for i in c:
-        cat.append(i.name)
-    return render_template('learn.html', item=selected, category=cat)
+    selected = None
+    category = None
+    
+    # Search in basics
+    for item in basics:
+        if item["name"] == name:
+            selected = item
+            category = "basics"
+            break
+    
+    # If not found in basics, search in tools
+    if not selected:
+        for item in tools:
+            if item["name"] == name:
+                selected = item
+                category = "tools"
+                break
+    
+    # If not found in tools, search in defense
+    if not selected:
+        for item in defense:
+            if item["name"] == name:
+                selected = item
+                category = "defense"
+                break
+    
+    if not selected:
+        return "Item not found", 404
+    
+    # Add item to visited items if not already there
+    visited_items = session.get('visited_items', [])
+    if name not in visited_items:
+        visited_items.append(name)
+        session['visited_items'] = visited_items
+        session.modified = True  # Mark session as modified
+    
+    return render_template('learn.html', item=selected)
 
 @app.route('/getbasics', methods=['GET'])
-def getdata():
+def get_basics():
     return jsonify({"basics": basics})
 
 @app.route('/gettools', methods=['GET'])
-def getdata():
+def get_tools():
     return jsonify({"tools": tools})
 
 @app.route('/getdefense', methods=['GET'])
-def getdata():
+def get_defense():
     return jsonify({"defense": defense})
+
+@app.route('/category/<string:category>')
+def show_category(category):
+    items = []
+    category_name = ""
+    
+    if category == 'basics':
+        items = basics
+        category_name = 'Basic'
+    elif category == 'tools':
+        items = tools
+        category_name = 'Tool'
+    elif category == 'defense':
+        items = defense
+        category_name = 'Defense'
+    else:
+        return "Category not found", 404
+    
+    return render_template('category.html', 
+                         category_name=category_name,
+                         items=items,
+                         visited_items=session.get('visited_items', []))
+
+@app.route('/getprogress')
+def get_progress():
+    total_items = len(basics) + len(tools) + len(defense)
+    visited_count = len(session.get('visited_items', []))
+    return jsonify({
+        'visited': visited_count,
+        'total': total_items,
+        'completed': visited_count >= total_items
+    })
 
 if __name__ == '__main__':
    app.run(debug = True, port=5001)

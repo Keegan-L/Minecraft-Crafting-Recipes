@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="welcome-text">
+    <h1>Welcome to Minecraft Crafting Guide</h1>
+    <p>Learn the art of crafting in Minecraft!</p>
+</div>
+
+<div class="progress-counter">
+    Progress: <span id="totalVisited">{{ visited_items|length }}</span>/{{ basics|length + tools|length + defense|length }} items visited
+</div>
+
+<div class="card-grid">
+    <div class="card clickable-card" onclick="window.location.href='/category/basics'">
+        <h2>Basic Items</h2>
+        <p>Learn about essential crafting materials like wood, sticks, and torches.</p>
+    </div>
+    
+    <div class="card clickable-card" onclick="window.location.href='/category/tools'">
+        <h2>Tools</h2>
+        <p>Discover how to craft various tools to help you survive and thrive.</p>
+    </div>
+    
+    <div class="card clickable-card" onclick="window.location.href='/category/defense'">
+        <h2>Defense</h2>
+        <p>Master the creation of armor and weapons to protect yourself.</p>
+    </div>
+</div>
+
+<div class="card" style="text-align: center;">
+    <h2>Ready for a Challenge?</h2>
+    <p>Take the quiz to test your knowledge!</p>
+    <button id="quizButton" {% if visited_items|length >= basics|length + tools|length + defense|length %}enabled{% else %}disabled{% endif %}>
+        Take Quiz
+    </button>
+</div>
+
+<script>
+    function updateProgress() {
+        fetch('/getprogress')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('totalVisited').textContent = data.visited;
+                const quizButton = document.getElementById('quizButton');
+                if (data.completed) {
+                    quizButton.disabled = false;
+                    quizButton.onclick = function() {
+                        window.location.href = '/quiz';
+                    };
+                }
+            });
+    }
+
+    // Update progress every 2 seconds
+    updateProgress();
+    setInterval(updateProgress, 2000);
+</script>
+{% endblock %} 
