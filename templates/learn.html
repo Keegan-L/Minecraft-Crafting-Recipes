@@ -20,13 +20,13 @@
     
     <div class="nav-buttons">
         {% if item.prev %}
-        <button onclick="window.location.href='/learn/{{ item.prev[0] }}'">Previous</button>
+        <button onclick="window.location.href='/learn/{{ item.prev }}'">Previous</button>
         {% else %}
         <button disabled>Previous</button>
         {% endif %}
         
         {% if item.next %}
-        <button onclick="window.location.href='/learn/{{ item.next[0] }}'">Next</button>
+        <button onclick="window.location.href='/learn/{{ item.next }}'">Next</button>
         {% else %}
         <button disabled>Next</button>
         {% endif %}
