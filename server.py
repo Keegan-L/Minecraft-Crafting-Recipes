@@ -334,26 +334,29 @@ defense = [
 
 # ROUTES
 
-@app.route('/learn/basics/<string:name>')
-def learnbasics(name):
+@app.route('/learn/<string:name>')
+def learn(name):
+    cat = []
     selected = next((b for b in basics if b["name"] == name), None)
     if selected is None:
-        return: "item not found", 404
-    return render_template('learn.html', item=selected)
-
-@app.route('/learn/tools/<string:name>')
-def learntools(name):
-    selected = next((t for t in tools if t["name"] == name), None)
-    if selected is None:
-        return: "item not found", 404
-    return render_template('learn.html', item=selected)
-
-@app.route('/learn/defense/<string:name>')
-def learndefense(name):
-    selected = next((d for d in defense if d["name"] == name), None)
-    if selected is None:
-        return: "item not found", 404
-    return render_template('learn.html', item=selected)
+        selected = next((t for t in tools if t["name"] == name), None)
+        if selected is None:
+            selected = next((d for d in defense if d["name"] == name), None)
+            if selected is None:
+                return "item not found", 404
+            else:
+                c = defense
+                for i in basics:
+                    cat.append(i.name)
+        else:
+            c = tools
+            for i in basics:
+                cat.append(i.name)
+    else:
+        c = basics
+    for i in c:
+        cat.append(i.name)
+    return render_template('learn.html', item=selected, category=cat)
 
 @app.route('/getbasics', methods=['GET'])
 def getdata():
