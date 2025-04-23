@@ -30,12 +30,16 @@
 <div class="card" style="text-align: center;">
     <h2>Ready for a Challenge?</h2>
     <p>Take the quiz to test your knowledge!</p>
-    <button id="quizButton" {% if visited_items|length >= basics|length + tools|length + defense|length %}enabled{% else %}disabled{% endif %}>
+    <button id="quizButton" {% if visited_items|length >= basics|length + tools|length + defense|length %}onclick="startQuiz()"{% else %}disabled{% endif %}>
         Take Quiz
     </button>
 </div>
 
 <script>
+    function startQuiz() {
+        window.location.href = '/quiz';
+    }
+
     function updateProgress() {
         fetch('/getprogress')
             .then(response => response.json())
@@ -44,9 +48,7 @@
                 const quizButton = document.getElementById('quizButton');
                 if (data.completed) {
                     quizButton.disabled = false;
-                    quizButton.onclick = function() {
-                        window.location.href = '/quiz';
-                    };
+                    quizButton.onclick = startQuiz;
                 }
             });
     }

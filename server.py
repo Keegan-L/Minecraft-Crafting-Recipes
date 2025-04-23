@@ -4,6 +4,7 @@ from flask import Response, request, jsonify
 from flask import send_from_directory
 from flask import session
 import os
+import random
 
 app = Flask(__name__)
 app.secret_key = 'minecraft_crafting_secret_key'  # Required for session
@@ -363,6 +364,15 @@ def learn(name):
     selected = None
     category = None
     
+    # Create a list of all craftable items
+    craftable_items = []
+    for item in basics:
+        craftable_items.append(item["name"])
+    for item in tools:
+        craftable_items.append(item["name"])
+    for item in defense:
+        craftable_items.append(item["name"])
+    
     # Search in basics
     for item in basics:
         if item["name"] == name:
@@ -396,7 +406,10 @@ def learn(name):
         session['visited_items'] = visited_items
         session.modified = True  # Mark session as modified
     
-    return render_template('learn.html', item=selected)
+    return render_template('learn.html', 
+                         item=selected, 
+                         category=category,
+                         craftable_items=craftable_items)
 
 @app.route('/getbasics', methods=['GET'])
 def get_basics():
@@ -441,6 +454,70 @@ def get_progress():
         'total': total_items,
         'completed': visited_count >= total_items
     })
+
+@app.route('/quiz')
+def start_quiz():
+    # Check if all items have been visited
+    total_items = len(basics) + len(tools) + len(defense)
+    visited_count = len(session.get('visited_items', []))
+    
+    if visited_count < total_items:
+        return "Please visit all items before taking the quiz", 403
+    
+    # Combine all items
+    all_items = basics + tools + defense
+    # Select a random item
+    correct_item = random.choice(all_items)
+    # Get two other random items
+    other_items = random.sample([item for item in all_items if item != correct_item], 2)
+    # Combine and shuffle options
+    options = [correct_item] + other_items
+    random.shuffle(options)
+    
+    # Format options for template
+    formatted_options = []
+    for item in options:
+        formatted_options.append({
+            'name': item['name'],
+            'url': '/quiz/check/' + item['name']
+        })
+    
+    return render_template('quiz.html',
+                         description=correct_item['desc'],
+                         options=formatted_options)
+
+@app.route('/quiz/check/<string:answer>')
+def check_answer(answer):
+    # Find the item that matches this description
+    all_items = basics + tools + defense
+    for item in all_items:
+        if item['name'] == answer:
+            # This is the correct item
+            # Get all possible ingredients
+            all_ingredients = []
+            for i in all_items:
+                all_ingredients.extend(i['madeof'])
+            all_ingredients = list(set(all_ingredients))  # Remove duplicates
+            
+            # Get the required ingredients
+            required_ingredients = item['madeof']
+            
+            # Add some random ingredients
+            extra_ingredients = random.sample(
+                [i for i in all_ingredients if i not in required_ingredients],
+                min(5, len(all_ingredients) - len(required_ingredients))
+            )
+            
+            # Combine and shuffle
+            ingredients = required_ingredients + extra_ingredients
+            random.shuffle(ingredients)
+            
+            return render_template('crafting.html',
+                                item_name=item['name'],
+                                ingredients=ingredients)
+    
+    # If we get here, it was the wrong answer
+    return render_template('wrong_answer.html')
 
 if __name__ == '__main__':
    app.run(debug = True, port=5001)
