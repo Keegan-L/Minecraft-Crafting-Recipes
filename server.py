@@ -341,6 +341,20 @@ def learnbasics(name):
         return: "item not found", 404
     return render_template('learn.html', item=selected)
 
+@app.route('/learn/tools/<string:name>')
+def learntools(name):
+    selected = next((t for t in tools if t["name"] == name), None)
+    if selected is None:
+        return: "item not found", 404
+    return render_template('learn.html', item=selected)
+
+@app.route('/learn/defense/<string:name>')
+def learndefense(name):
+    selected = next((d for d in defense if d["name"] == name), None)
+    if selected is None:
+        return: "item not found", 404
+    return render_template('learn.html', item=selected)
+
 @app.route('/getbasics', methods=['GET'])
 def getdata():
     return jsonify({"basics": basics})
