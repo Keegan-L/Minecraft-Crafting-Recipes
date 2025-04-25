@@ -29,7 +29,7 @@ basics = [
         "makes": ["Stick", "Crafting Table", "Chest"],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Stick",
-        "prev": ""
+        "prev": "",
         "recipe": [
             ["", "", ""],
             ["", "Log", ""],
@@ -44,7 +44,7 @@ basics = [
         "makes": ["Torch", "Fence", "Sword", "Ladder", "Sign"],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Torch",
-        "prev": "Wooden Plank"
+        "prev": "Wooden Plank",
         "recipe": [
             ["", "", ""],
             ["", "Wooden Plank", ""],
@@ -59,7 +59,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Crafting Table",
-        "prev": "Stick"
+        "prev": "Stick",
         "recipe": [
             ["", "", ""],
             ["", "Coal", ""],
@@ -74,7 +74,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Furnace",
-        "prev": "Torch"
+        "prev": "Torch",
         "recipe": [
             ["", "", ""],
             ["Wooden Plank", "Wooden Plank", ""],
@@ -89,7 +89,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Chest",
-        "prev": "Crafting Table"
+        "prev": "Crafting Table",
         "recipe": [
             ["Cobblestone", "Cobblestone", "Cobblestone"],
             ["Cobblestone", "", "Cobblestone"],
@@ -104,7 +104,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Ladder",
-        "prev": "Furnace"
+        "prev": "Furnace",
         "recipe": [
             ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
             ["Wooden Plank", "", "Wooden Plank"],
@@ -119,7 +119,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Fence",
-        "prev": "Furnace"
+        "prev": "Furnace",
         "recipe": [
             ["Stick", "", "Stick"],
             ["Stick", "Stick", "Stick"],
@@ -134,7 +134,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Boat",
-        "prev": "Ladder"
+        "prev": "Ladder",
         "recipe": [
             ["", "", ""],
             ["Wooden Plank", "Stick", "Wooden Plank"],
@@ -149,7 +149,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Slab",
-        "prev": "Fence"
+        "prev": "Fence",
         "recipe": [
             ["", "", ""],
             ["Wooden Plank", "", "Wooden Plank"],
@@ -164,7 +164,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Stairs",
-        "prev": "Boat"
+        "prev": "Boat",
         "recipe": [
             ["", "", ""],
             ["", "", ""],
@@ -179,7 +179,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Door",
-        "prev": "Slab"
+        "prev": "Slab",
         "recipe": [
             ["", "", "Wooden Plank"],
             ["", "Wooden Plank", "Wooden Plank"],
@@ -194,7 +194,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Sign",
-        "prev": "Stairs"
+        "prev": "Stairs",
         "recipe": [
             ["Wooden Plank", "Wooden Plank", ""],
             ["Wooden Plank", "Wooden Plank", ""],
@@ -209,7 +209,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Bed",
-        "prev": "Door"
+        "prev": "Door",
         "recipe": [
             ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
             ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
@@ -224,7 +224,7 @@ basics = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "",
-        "prev": "Sign"
+        "prev": "Sign",
         "recipe": [
             ["", "", ""],
             ["Wool", "Wool", "Wool"],
@@ -242,7 +242,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Axe",
-        "prev": ""
+        "prev": "",
         "recipe": [
             ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
             ["", "Stick", ""],
@@ -257,7 +257,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Torch",
-        "prev": "Wooden Plank"
+        "prev": "Wooden Plank",
         "recipe": [
             ["Wooden Plank", "Wooden Plank", ""],
             ["Wooden Plank", "Stick", ""],
@@ -272,7 +272,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Hoe",
-        "prev": "Axe"
+        "prev": "Axe",
         "recipe": [
             ["", "Wooden Plank", ""],
             ["", "Stick", ""],
@@ -287,7 +287,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Fishing Rod",
-        "prev": "Shovel"
+        "prev": "Shovel",
         "recipe": [
             ["Wooden Plank", "Wooden Plank", ""],
             ["", "Stick", ""],
@@ -302,7 +302,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Flint & Steel",
-        "prev": "Hoe"
+        "prev": "Hoe",
         "recipe": [
             ["", "", "Stick"],
             ["", "Stick", "String"],
@@ -317,7 +317,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Compass",
-        "prev": "Fishing Rod"
+        "prev": "Fishing Rod",
         "recipe": [
             ["", "", ""],
             ["Iron", "", ""],
@@ -332,7 +332,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Bucket",
-        "prev": "Flint & Steel"
+        "prev": "Flint & Steel",
         "recipe": [
             ["", "Iron", ""],
             ["Iron", "Redstone", "Iron"],
@@ -347,7 +347,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Shears",
-        "prev": "Compass"
+        "prev": "Compass",
         "recipe": [
             ["", "", ""],
             ["Iron", "", "Iron"],
@@ -362,7 +362,7 @@ tools = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "",
-        "prev": "Bucket"
+        "prev": "Bucket",
         "recipe": [
             ["", "", ""],
             ["", "Iron", ""],
@@ -380,7 +380,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Chestplate",
-        "prev": ""
+        "prev": "",
         "recipe": [
             ["Leather", "Leather", "Leather"],
             ["Leather", "", "Leather"],
@@ -395,7 +395,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Leggings",
-        "prev": "Helmet"
+        "prev": "Helmet",
         "recipe": [
             ["Leather", "", "Leather"],
             ["Leather", "Leather", "Leather"],
@@ -410,7 +410,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Boots",
-        "prev": "Chestplate"
+        "prev": "Chestplate",
         "recipe": [
             ["Leather", "Leather", "Leather"],
             ["Leather", "", "Leather"],
@@ -425,7 +425,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Sword",
-        "prev": "Leggings"
+        "prev": "Leggings",
         "recipe": [
             ["", "", ""],
             ["Leather", "", "Leather"],
@@ -440,7 +440,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Bow",
-        "prev": "Boots"
+        "prev": "Boots",
         "recipe": [
             ["", "Wooden Plank", ""],
             ["", "Wooden Plank", ""],
@@ -455,7 +455,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Arrow",
-        "prev": "Sword"
+        "prev": "Sword",
         "recipe": [
             ["String", "Stick", ""],
             ["String", "", "Stick"],
@@ -470,7 +470,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Shield",
-        "prev": "Bow"
+        "prev": "Bow",
         "recipe": [
             ["", "Coal", ""],
             ["", "Stick", ""],
@@ -485,7 +485,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "Scute",
-        "prev": "Arrow"
+        "prev": "Arrow",
         "recipe": [
             ["Wooden Plank", "Iron", "Wooden Plank"],
             ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
@@ -500,7 +500,7 @@ defense = [
         "makes": [],
         "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
         "next": "",
-        "prev": "Shield"
+        "prev": "Shield",
         "recipe": [
             ["Turtle Shell", "Turtle Shell", "Turtle Shell"],
             ["Turtle Shell", "", "Turtle Shell"],
@@ -678,6 +678,41 @@ def check_answer(answer):
     
     # If we get here, it was the wrong answer
     return render_template('wrong_answer.html')
+
+@app.route('/verify_recipe', methods=['POST'])
+def verify_recipe():
+    data = request.get_json()
+    item_name = data.get('item_name')
+    recipe = data.get('recipe', [])
+    
+    # Find the item in our data
+    all_items = basics + tools + defense
+    target_item = None
+    for item in all_items:
+        if item['name'] == item_name:
+            target_item = item
+            break
+    
+    if not target_item:
+        return jsonify({'correct': False, 'error': 'Item not found'})
+    
+    # Convert recipe to 3x3 grid
+    recipe_grid = [recipe[i:i+3] for i in range(0, 9, 3)]
+    
+    # Get the correct recipe grid
+    correct_recipe = target_item['recipe']
+    
+    # Compare the recipes
+    is_correct = True
+    for i in range(3):
+        for j in range(3):
+            if recipe_grid[i][j] != correct_recipe[i][j]:
+                is_correct = False
+                break
+        if not is_correct:
+            break
+    
+    return jsonify({'correct': is_correct})
 
 if __name__ == '__main__':
    app.run(debug = True, port=5001)

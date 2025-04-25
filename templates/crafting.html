@@ -7,7 +7,7 @@
     
     <div class="crafting-grid">
         {% for i in range(9) %}
-        <div class="crafting-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="crafting-slot" ondrop="drop(event)" ondragover="allowDrop(event)" data-index="{{ i }}"></div>
         {% endfor %}
     </div>
     
@@ -17,6 +17,11 @@
             {{ ingredient }}
         </div>
         {% endfor %}
+    </div>
+
+    <div class="button-container">
+        <button class="home-button" onclick="window.location.href='/'">Home</button>
+        <button class="submit-button" onclick="verifyRecipe()">Submit Build</button>
     </div>
 </div>
 
@@ -58,6 +63,40 @@
         padding: 10px 20px;
         cursor: move;
     }
+
+    .button-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .home-button, .submit-button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .home-button {
+        background-color: #8B4513;
+        color: white;
+    }
+
+    .submit-button {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .home-button:hover {
+        background-color: #6B3410;
+    }
+
+    .submit-button:hover {
+        background-color: #45a049;
+    }
 </style>
 
 <script>
@@ -77,6 +116,39 @@
         clone.draggable = false;
         clone.style.cursor = 'default';
         ev.target.appendChild(clone);
+    }
+
+    function verifyRecipe() {
+        const slots = document.querySelectorAll('.crafting-slot');
+        const recipe = Array.from(slots).map(slot => {
+            const ingredient = slot.firstChild;
+            return ingredient ? ingredient.textContent.trim() : '';
+        });
+
+        // Send recipe to server for verification
+        fetch('/verify_recipe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                item_name: '{{ item_name }}',
+                recipe: recipe
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.correct) {
+                alert('Correct recipe! Well done!');
+                window.location.href = '/quiz';
+            } else {
+                alert('Incorrect recipe. Try again!');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while verifying the recipe.');
+        });
     }
 </script>
 {% endblock %} 
