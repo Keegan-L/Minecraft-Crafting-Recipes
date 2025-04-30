@@ -1,60 +1,61 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="welcome-text">
-    <h1>Welcome to Minecraft Crafting Guide</h1>
-    <p>Learn the art of crafting in Minecraft!</p>
-</div>
-
-<div class="progress-counter">
-    Progress: <span id="totalVisited">{{ visited_items|length }}</span>/{{ basics|length + tools|length + defense|length }} items visited
-</div>
-
-<div class="card-grid">
-    <div class="card clickable-card" onclick="window.location.href='/category/basics'">
-        <h2>Basic Items</h2>
-        <p>Learn about essential crafting materials like wood, sticks, and torches.</p>
+    <div class="welcome-text">
+        <h1 style="font-size: 2.5em; color: white;">Welcome to Minecraft Crafting Guide</h1>
     </div>
-    
-    <div class="card clickable-card" onclick="window.location.href='/category/tools'">
-        <h2>Tools</h2>
-        <p>Discover how to craft various tools to help you survive and thrive.</p>
+
+    <div class="progress-counter">
+        <span id="progressText">Progress: </span>
+        <span id="visitedCount">0</span>/32 items visited
     </div>
-    
-    <div class="card clickable-card" onclick="window.location.href='/category/defense'">
-        <h2>Defense</h2>
-        <p>Master the creation of armor and weapons to protect yourself.</p>
+
+    <div class="card-grid">
+        <div class="card clickable-card" onclick="window.location.href='/category/basics'">
+            <h2>Basic Items</h2>
+            <p class="card-description">Learn how to craft essential items like sticks, planks, and torches that form the foundation of your Minecraft journey.</p>
+        </div>
+
+        <div class="card clickable-card" onclick="window.location.href='/category/tools'">
+            <h2>Tools</h2>
+            <p class="card-description">Discover the tools you'll need to gather resources and build your world, from wooden pickaxes to diamond shovels.</p>
+        </div>
+
+        <div class="card clickable-card" onclick="window.location.href='/category/defense'">
+            <h2>Defense</h2>
+            <p class="card-description">Master the art of crafting armor and weapons to protect yourself from the dangers of the Minecraft world.</p>
+        </div>
     </div>
-</div>
 
-<div class="card" style="text-align: center;">
-    <h2>Ready for a Challenge?</h2>
-    <p>Take the quiz to test your knowledge!</p>
-    <button id="quizButton" {% if visited_items|length >= basics|length + tools|length + defense|length %}onclick="startQuiz()"{% else %}disabled{% endif %}>
-        Take Quiz
-    </button>
-</div>
+    <div class="card" style="text-align: center; margin-top: 30px;">
+        <h2>Ready for a Challenge?</h2>
+        <p>Take the quiz to test your knowledge!</p>
+        <button id="quizButton" onclick="window.location.href='/quiz'" disabled>Take Quiz</button>
+        <p class="quiz-message">You can only take the quiz after visiting all 32 items.</p>
+    </div>
 
-<script>
-    function startQuiz() {
-        window.location.href = '/quiz';
-    }
+    <script>
+        function updateProgress() {
+            fetch('/progress')
+                .then(response => response.json())
+                .then(data => {
+                    const quizButton = document.getElementById('quizButton');
+                    const visitedCount = document.getElementById('visitedCount');
+                    const progressText = document.getElementById('progressText');
+                    
+                    visitedCount.textContent = data.visited;
+                    quizButton.disabled = data.visited < data.total;
+                    
+                    if (data.visited === data.total) {
+                        progressText.textContent = "Ready for Quiz! ";
+                    } else {
+                        progressText.textContent = "Progress: ";
+                    }
+                });
+        }
 
-    function updateProgress() {
-        fetch('/getprogress')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('totalVisited').textContent = data.visited;
-                const quizButton = document.getElementById('quizButton');
-                if (data.completed) {
-                    quizButton.disabled = false;
-                    quizButton.onclick = startQuiz;
-                }
-            });
-    }
-
-    // Update progress every 2 seconds
-    updateProgress();
-    setInterval(updateProgress, 2000);
-</script>
+        // Update progress every 2 seconds
+        setInterval(updateProgress, 2000);
+        updateProgress(); // Initial update
+    </script>
 {% endblock %} 
