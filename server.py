@@ -23,11 +23,11 @@ def serve_data(filename):
 basics = [
     {
         "name": "Wooden Plank",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640",
         "desc": "Basic building material. Varies by biome (Oak, Spruce, Birch, Jungle, Acacia, Dark Oak).",
         "madeof": ["Log"],
         "makes": ["Stick", "Crafting Table", "Chest"],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Stick",
         "prev": "",
         "recipe": [
@@ -38,11 +38,11 @@ basics = [
    },
     {
         "name": "Stick",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441",
         "desc": "Used to craft many other items.",
         "madeof": ["Wooden Plank"],
         "makes": ["Torch", "Fence", "Sword", "Ladder", "Sign"],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Torch",
         "prev": "Wooden Plank",
         "recipe": [
@@ -53,11 +53,11 @@ basics = [
    },
     {
         "name": "Torch",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/90/Torch.gif/revision/latest?cb=20200111190834",
         "desc": "Provides light and melts ice/snow.",
         "madeof": ["Stick", "Coal"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Crafting Table",
         "prev": "Stick",
         "recipe": [
@@ -68,11 +68,11 @@ basics = [
     },
     {
         "name": "Crafting Table",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/93/Crafting_Table_JE3_BE2.png/revision/latest?cb=20190606093431",
         "desc": "Allows player to craft when right clicked.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Furnace",
         "prev": "Torch",
         "recipe": [
@@ -83,11 +83,11 @@ basics = [
     },
     {
         "name": "Furnace",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/99/Furnace_%28S%29_JE4.png/revision/latest/scale-to-width/360?cb=20210111063232",
         "desc": "Allows player to smelt (refine ores, cook food, etc.) when right clicked).",
         "madeof": ["Cobblestone"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Chest",
         "prev": "Crafting Table",
         "recipe": [
@@ -98,11 +98,11 @@ basics = [
     },
     {
         "name": "Chest",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3d/Chest_%28S%29_JE1.png/revision/latest?cb=20200128020353",
         "desc": "Used to store items.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Ladder",
         "prev": "Furnace",
         "recipe": [
@@ -113,11 +113,11 @@ basics = [
    },
    {
         "name": "Ladder",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/af/Ladder_%28texture%29_JE3_BE2.png/revision/latest?cb=20200922000708",
         "desc": "Allows player to climb vertically.",
         "madeof": ["Stick"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Fence",
         "prev": "Furnace",
         "recipe": [
@@ -128,11 +128,11 @@ basics = [
    },
    {
         "name": "Fence",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f6/Oak_Fence_JE4_BE2.png/revision/latest?cb=20200317191546",
         "desc": "Barrier that can't be jumped over.",
         "madeof": ["Wooden Plank", "Stick"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Boat",
         "prev": "Ladder",
         "recipe": [
@@ -143,11 +143,11 @@ basics = [
    },
    {
         "name": "Boat",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/58/Oak_Boat_%28item%29_JE4_BE3.png/revision/latest?cb=20200518190533",
         "desc": "Used to travel over water.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Slab",
         "prev": "Fence",
         "recipe": [
@@ -158,11 +158,11 @@ basics = [
    },
    {
         "name": "Slab",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/ac/Oak_Slab_JE5_BE2.png/revision/latest/scale-to-width/360?cb=20240729071106",
         "desc": "Used to create gradual slopes.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Stairs",
         "prev": "Boat",
         "recipe": [
@@ -173,11 +173,11 @@ basics = [
    },
    {
         "name": "Stairs",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/a0/Oak_Stairs_%28N%29_JE7_BE6.png/revision/latest?cb=20200317191626",
         "desc": "Used to build staircases.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Door",
         "prev": "Slab",
         "recipe": [
@@ -188,11 +188,11 @@ basics = [
    },
    {
         "name": "Door",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2a/Oak_Door_%28item%29_JE4_BE3.png/revision/latest?cb=20230319211346",
         "desc": "Wooden doors can be opened by clicking or redstone power, Iron doors can only be opened by redstone power.",
         "madeof": ["Wooden Plank", "Iron Ingot"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Sign",
         "prev": "Stairs",
         "recipe": [
@@ -203,11 +203,11 @@ basics = [
    },
    {
         "name": "Sign",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/82/Oak_Sign_JE3.png/revision/latest/scale-to-width/360?cb=20211013161856",
         "desc": "Can display text.",
         "madeof": ["Wooden Plank", "Stick"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Bed",
         "prev": "Door",
         "recipe": [
@@ -218,11 +218,11 @@ basics = [
    },
    {
         "name": "Bed",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft/images/c/c5/Bed.png/revision/latest?cb=20191103220226",
         "desc": "Used to forward from night to day.",
         "madeof": ["Wooden plank", "Wool"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "",
         "prev": "Sign",
         "recipe": [
@@ -236,11 +236,11 @@ basics = [
 tools = [
     {
         "name": "Pickaxe",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0b/Wooden_Pickaxe_JE2_BE2.png/revision/latest?cb=20200217231203",
         "desc": "Used to mine stone blocks and ores.",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Axe",
         "prev": "",
         "recipe": [
@@ -251,11 +251,11 @@ tools = [
    },
    {
         "name": "Axe",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/56/Wooden_Axe_JE2_BE2.png/revision/latest/scale-to-width/360?cb=20200217234355",
         "desc": "Used to chop wood blocks faster.",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Torch",
         "prev": "Wooden Plank",
         "recipe": [
@@ -266,11 +266,11 @@ tools = [
    },
    {
         "name": "Shovel",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Wooden_Shovel_JE2_BE2.png/revision/latest/scale-to-width/360?cb=20200217234949",
         "desc": "Used to dig sand, gravel, dirt, grass, and snow faster.",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingots", "Gold Ingots", "Diamonds"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Hoe",
         "prev": "Axe",
         "recipe": [
@@ -281,11 +281,11 @@ tools = [
    },
    {
         "name": "Hoe",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/cd/Wooden_Hoe_JE3_BE3.png/revision/latest/scale-to-width/360?cb=20200226194121",
         "desc": "Used to till dirt blocks in preparation for growing crops.",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingots", "Gold Ingots", "Diamonds"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Fishing Rod",
         "prev": "Shovel",
         "recipe": [
@@ -296,11 +296,11 @@ tools = [
    },
    {
         "name": "Fishing Rod",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7f/Fishing_Rod_JE2_BE2.png/revision/latest/thumbnail/width/360/height/360?cb=20200201063839",
         "desc": "Can be cast into water to catch fish.",
         "madeof": ["Stick", "String"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Flint & Steel",
         "prev": "Hoe",
         "recipe": [
@@ -311,11 +311,11 @@ tools = [
    },
    {
         "name": "Flint & Steel",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fd/Flint_and_Steel_JE2.png/revision/latest?cb=20200128083122",
         "desc": "Used to light fires, ignite TNT and open nether portals.",
         "madeof": ["Iron Ingot", "Flint"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Compass",
         "prev": "Fishing Rod",
         "recipe": [
@@ -326,11 +326,11 @@ tools = [
    },
    {
         "name": "Compass",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b3/Compass_JE3_BE3.gif/revision/latest/thumbnail/width/360/height/360?cb=20201125191224",
         "desc": "Points to the spawn point.",
         "madeof": ["Iron Ingot", "Redstone"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Bucket",
         "prev": "Flint & Steel",
         "recipe": [
@@ -341,11 +341,11 @@ tools = [
    },
    {
         "name": "Bucket",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Bucket_JE2_BE2.png/revision/latest/thumbnail/width/360/height/360?cb=20200510234539",
         "desc": "Used to transport water, lava, and milk.",
         "madeof": ["Iron Ingot"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Shears",
         "prev": "Compass",
         "recipe": [
@@ -356,11 +356,11 @@ tools = [
    },
    {
         "name": "Shears",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/5a/Shears_JE2_BE2.png/revision/latest/thumbnail/width/360/height/360?cb=20191012183756",
         "desc": "Used to collect wool from sheep and leaves from trees.",
         "madeof": ["Iron Ingot"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "",
         "prev": "Bucket",
         "recipe": [
@@ -374,11 +374,11 @@ tools = [
 defense = [
     {
         "name": "Helmet",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c5/Leather_Cap_%28item%29_JE4_BE3.png/revision/latest?cb=20190910050904",
         "desc": "Head armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Chestplate",
         "prev": "",
         "recipe": [
@@ -389,11 +389,11 @@ defense = [
    },
    {
         "name": "Chestplate",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/71/Leather_Tunic_%28item%29_JE4_BE3.png/revision/latest?cb=20190910050828",
         "desc": "Chest armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Leggings",
         "prev": "Helmet",
         "recipe": [
@@ -404,11 +404,11 @@ defense = [
    },
    {
         "name": "Leggings",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2f/Leather_Pants_%28item%29_JE3_BE2.png/revision/latest?cb=20201104115305",
         "desc": "Leg armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Boots",
         "prev": "Chestplate",
         "recipe": [
@@ -419,11 +419,11 @@ defense = [
    },
    {
         "name": "Boots",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b5/Leather_Boots_%28item%29_JE4_BE3.png/revision/latest?cb=20190910050749",
         "desc": "Foot armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Sword",
         "prev": "Leggings",
         "recipe": [
@@ -434,11 +434,11 @@ defense = [
    },
    {
         "name": "Sword",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d5/Wooden_Sword_JE2_BE2.png/revision/latest/scale-to-width/360?cb=20200217235747",
         "desc": "Deal damage to mobs and other players.",
         "madeof": ["Stick", "Wooden Planks", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Bow",
         "prev": "Boots",
         "recipe": [
@@ -449,11 +449,11 @@ defense = [
    },
    {
         "name": "Bow",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/99/Bow_JE2_BE1.png/revision/latest/scale-to-width/360?cb=20200128015144",
         "desc": "Used to shoot arrows that deal damage to mobs and other players.",
         "madeof": ["Stick", "String"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Arrow",
         "prev": "Sword",
         "recipe": [
@@ -464,11 +464,11 @@ defense = [
    },
    {
         "name": "Arrow",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft/images/4/41/Arrow.png/revision/latest/thumbnail/width/360/height/360?cb=20200118044944",
         "desc": "Ammunition for bows.",
         "madeof": ["Stick", "Flint", "Feather"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Shield",
         "prev": "Bow",
         "recipe": [
@@ -479,11 +479,11 @@ defense = [
    },
    {
         "name": "Shield",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c6/Shield_JE2_BE1.png/revision/latest?cb=20190725172341",
         "desc": "Protects player against attack.",
         "madeof": ["Wooden Plank", "Iron"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "Scute",
         "prev": "Arrow",
         "recipe": [
@@ -494,11 +494,11 @@ defense = [
    },
    {
         "name": "Scute",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/cc/Scute_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20190403193903",
         "desc": "Helmet that gives the player water breathing effect.",
         "madeof": ["Turtle Shell"],
         "makes": [],
-        "recipeimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4xlp7Az9BofS3TO91z_EaeLvHusgeBqt_A&s",
+        "recipeimg": "",
         "next": "",
         "prev": "Shield",
         "recipe": [
