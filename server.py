@@ -24,16 +24,15 @@ basics = [
     {
         "name": "Wooden Plank",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640",
-        "desc": "Basic building material. Varies by biome (Oak, Spruce, Birch, Jungle, Acacia, Dark Oak).",
+        "desc": "Basic building material. Appearance varies by biome depending on type of wood (Oak, Spruce, Birch, Jungle, Acacia, Dark Oak).",
         "madeof": ["Log"],
         "makes": ["Stick", "Crafting Table", "Chest"],
-        "recipeimg": "",
         "next": "Stick",
         "prev": "",
         "recipe": [
-            ["", "", ""],
-            ["", "Log", ""],
-            ["", "", ""]
+            [{}, {}, {}],
+            [{}, {"ingredient": "Log", "pic": "https://minecraft.wiki/images/Oak_Log_%28UD%29_JE5_BE3.png?8a080"}, {}],
+            [{}, {}, {}]
         ]
    },
     {
@@ -42,13 +41,12 @@ basics = [
         "desc": "Used to craft many other items.",
         "madeof": ["Wooden Plank"],
         "makes": ["Torch", "Fence", "Sword", "Ladder", "Sign"],
-        "recipeimg": "",
         "next": "Torch",
         "prev": "Wooden Plank",
         "recipe": [
-            ["", "", ""],
-            ["", "Wooden Plank", ""],
-            ["", "Wooden Plank", ""]
+            [{}, {}, {}],
+            [{}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}]
         ]
    },
     {
@@ -57,13 +55,12 @@ basics = [
         "desc": "Provides light and melts ice/snow.",
         "madeof": ["Stick", "Coal"],
         "makes": [],
-        "recipeimg": "",
         "next": "Crafting Table",
         "prev": "Stick",
         "recipe": [
-            ["", "", ""],
-            ["", "Coal", ""],
-            ["", "Stick", ""]
+            [{}, {}, {}],
+            [{}, {"ingredient": "Coal", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/58/Coal_JE4_BE3.png/revision/latest/thumbnail/width/360/height/360?cb=20230625214010"}, {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}]
         ]
     },
     {
@@ -72,28 +69,26 @@ basics = [
         "desc": "Allows player to craft when right clicked.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "",
         "next": "Furnace",
         "prev": "Torch",
         "recipe": [
-            ["", "", ""],
-            ["Wooden Plank", "Wooden Plank", ""],
-            ["Wooden Plank", "Wooden Plank", ""]
+            [{}, {}, {}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}]
         ]
     },
     {
         "name": "Furnace",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/99/Furnace_%28S%29_JE4.png/revision/latest/scale-to-width/360?cb=20210111063232",
-        "desc": "Allows player to smelt (refine ores, cook food, etc.) when right clicked).",
+        "desc": "Allows player to smelt (refine ores, cook food, etc.) when right clicked). Can be made with Cobblestone or Blackstone",
         "madeof": ["Cobblestone"],
         "makes": [],
-        "recipeimg": "",
         "next": "Chest",
         "prev": "Crafting Table",
         "recipe": [
-            ["Cobblestone", "Cobblestone", "Cobblestone"],
-            ["Cobblestone", "", "Cobblestone"],
-            ["Cobblestone", "Cobblestone", "Cobblestone"]
+            [{"ingredient": "Cobblestone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone_JE5_BE3.png/revision/latest?cb=20200825032214"}, {"ingredient": "Cobblestone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone_JE5_BE3.png/revision/latest?cb=20200825032214"}, {"ingredient": "Cobblestone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone_JE5_BE3.png/revision/latest?cb=20200825032214"}],
+            [{"ingredient": "Cobblestone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone_JE5_BE3.png/revision/latest?cb=20200825032214"}, {}, {"ingredient": "Cobblestone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone_JE5_BE3.png/revision/latest?cb=20200825032214"}],
+            [{"ingredient": "Cobblestone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone_JE5_BE3.png/revision/latest?cb=20200825032214"}, {"ingredient": "Cobblestone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone_JE5_BE3.png/revision/latest?cb=20200825032214"}, {"ingredient": "Cobblestone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone_JE5_BE3.png/revision/latest?cb=20200825032214"}]
         ]
     },
     {
@@ -102,13 +97,12 @@ basics = [
         "desc": "Used to store items.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "",
         "next": "Ladder",
         "prev": "Furnace",
         "recipe": [
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
-            ["Wooden Plank", "", "Wooden Plank"],
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"]
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}]
         ]
    },
    {
@@ -117,13 +111,12 @@ basics = [
         "desc": "Allows player to climb vertically.",
         "madeof": ["Stick"],
         "makes": [],
-        "recipeimg": "",
         "next": "Fence",
         "prev": "Furnace",
         "recipe": [
-            ["Stick", "", "Stick"],
-            ["Stick", "Stick", "Stick"],
-            ["Stick", "", "Stick"]
+            [{"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}],
+            [{"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}],
+            [{"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}]
         ]
    },
    {
@@ -132,13 +125,12 @@ basics = [
         "desc": "Barrier that can't be jumped over.",
         "madeof": ["Wooden Plank", "Stick"],
         "makes": [],
-        "recipeimg": "",
         "next": "Boat",
         "prev": "Ladder",
         "recipe": [
-            ["", "", ""],
-            ["Wooden Plank", "Stick", "Wooden Plank"],
-            ["Wooden Plank", "Stick", "Wooden Plank"]
+            [{}, {}, {}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}]
         ]
    },
    {
@@ -147,28 +139,26 @@ basics = [
         "desc": "Used to travel over water.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "",
         "next": "Slab",
         "prev": "Fence",
         "recipe": [
-            ["", "", ""],
-            ["Wooden Plank", "", "Wooden Plank"],
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"]
+            [{}, {}, {}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}]
         ]
    },
    {
         "name": "Slab",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/ac/Oak_Slab_JE5_BE2.png/revision/latest/scale-to-width/360?cb=20240729071106",
-        "desc": "Used to create gradual slopes.",
+        "desc": "Used to create gradual slopes. Can be made of many different building materials (Wooden Plank, Cobblestone, Brick, Quartz, etc.).",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "",
         "next": "Stairs",
         "prev": "Boat",
         "recipe": [
-            ["", "", ""],
-            ["", "", ""],
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"]
+            [{}, {}, {}],
+            [{}, {}, {}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}]
         ]
    },
    {
@@ -177,13 +167,12 @@ basics = [
         "desc": "Used to build staircases.",
         "madeof": ["Wooden Plank"],
         "makes": [],
-        "recipeimg": "",
         "next": "Door",
         "prev": "Slab",
         "recipe": [
-            ["", "", "Wooden Plank"],
-            ["", "Wooden Plank", "Wooden Plank"],
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"]
+            [{}, {}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}]
         ]
    },
    {
@@ -192,13 +181,12 @@ basics = [
         "desc": "Wooden doors can be opened by clicking or redstone power, Iron doors can only be opened by redstone power.",
         "madeof": ["Wooden Plank", "Iron Ingot"],
         "makes": [],
-        "recipeimg": "",
         "next": "Sign",
         "prev": "Stairs",
         "recipe": [
-            ["Wooden Plank", "Wooden Plank", ""],
-            ["Wooden Plank", "Wooden Plank", ""],
-            ["Wooden Plank", "Wooden Plank", ""]
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}]
         ]
    },
    {
@@ -207,13 +195,12 @@ basics = [
         "desc": "Can display text.",
         "madeof": ["Wooden Plank", "Stick"],
         "makes": [],
-        "recipeimg": "",
         "next": "Bed",
         "prev": "Door",
         "recipe": [
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
-            ["", "Stick", ""]
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}]
         ]
    },
    {
@@ -222,13 +209,12 @@ basics = [
         "desc": "Used to forward from night to day.",
         "madeof": ["Wooden plank", "Wool"],
         "makes": [],
-        "recipeimg": "",
         "next": "",
         "prev": "Sign",
         "recipe": [
-            ["", "", ""],
-            ["Wool", "Wool", "Wool"],
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"]
+            [{}, {}, {}],
+            [{"ingredient": "Wool", "pic": "https://minecraft.wiki/images/White_Wool_JE2_BE2.png?2bcdc"}, {"ingredient": "Wool", "pic": "https://minecraft.wiki/images/White_Wool_JE2_BE2.png?2bcdc"}, {"ingredient": "Wool", "pic": "https://minecraft.wiki/images/White_Wool_JE2_BE2.png?2bcdc"}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}]
         ]
    }
 ]
@@ -237,61 +223,57 @@ tools = [
     {
         "name": "Pickaxe",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0b/Wooden_Pickaxe_JE2_BE2.png/revision/latest?cb=20200217231203",
-        "desc": "Used to mine stone blocks and ores.",
+        "desc": "Used to mine stone blocks and ores. Durability and Damage varies depending on type of Pickaxe (Wooden, Stone, Iron, Gold, Diamond).",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "",
         "next": "Axe",
         "prev": "",
         "recipe": [
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
-            ["", "Stick", ""],
-            ["", "Stick", ""]
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}]
         ]
    },
    {
         "name": "Axe",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/56/Wooden_Axe_JE2_BE2.png/revision/latest/scale-to-width/360?cb=20200217234355",
-        "desc": "Used to chop wood blocks faster.",
+        "desc": "Used to chop wood blocks faster. Durability and Damage varies depending on type of Axe (Wooden, Stone, Iron, Gold, Diamond).",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "",
         "next": "Torch",
         "prev": "Wooden Plank",
         "recipe": [
-            ["Wooden Plank", "Wooden Plank", ""],
-            ["Wooden Plank", "Stick", ""],
-            ["", "Stick", ""]
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, "Stick", {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}]
         ]
    },
    {
         "name": "Shovel",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Wooden_Shovel_JE2_BE2.png/revision/latest/scale-to-width/360?cb=20200217234949",
-        "desc": "Used to dig sand, gravel, dirt, grass, and snow faster.",
+        "desc": "Used to dig sand, gravel, dirt, grass, and snow faster. Durability and Damage varies depending on type of Shovel (Wooden, Stone, Iron, Gold, Diamond).",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingots", "Gold Ingots", "Diamonds"],
         "makes": [],
-        "recipeimg": "",
         "next": "Hoe",
         "prev": "Axe",
         "recipe": [
-            ["", "Wooden Plank", ""],
-            ["", "Stick", ""],
-            ["", "Stick", ""]
+            [{}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}]
         ]
    },
    {
         "name": "Hoe",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/cd/Wooden_Hoe_JE3_BE3.png/revision/latest/scale-to-width/360?cb=20200226194121",
-        "desc": "Used to till dirt blocks in preparation for growing crops.",
+        "desc": "Used to till dirt blocks in preparation for growing crops. Durability and Damage varies depending on type of Hoe (Wooden, Stone, Iron, Gold, Diamond).",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingots", "Gold Ingots", "Diamonds"],
         "makes": [],
-        "recipeimg": "",
         "next": "Fishing Rod",
         "prev": "Shovel",
         "recipe": [
-            ["Wooden Plank", "Wooden Plank", ""],
-            ["", "Stick", ""],
-            ["", "Stick", ""]
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}]
         ]
    },
    {
@@ -300,13 +282,12 @@ tools = [
         "desc": "Can be cast into water to catch fish.",
         "madeof": ["Stick", "String"],
         "makes": [],
-        "recipeimg": "",
         "next": "Flint & Steel",
         "prev": "Hoe",
         "recipe": [
-            ["", "", "Stick"],
-            ["", "Stick", "String"],
-            ["Stick", "", "String"]
+            [{}, {}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {"ingredient": "String", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c0/String_JE1_BE1.png/revision/latest?cb=20200128023538"}],
+            [{"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}, {"ingredient": "String", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c0/String_JE1_BE1.png/revision/latest?cb=20200128023538"}]
         ]
    },
    {
@@ -315,13 +296,12 @@ tools = [
         "desc": "Used to light fires, ignite TNT and open nether portals.",
         "madeof": ["Iron Ingot", "Flint"],
         "makes": [],
-        "recipeimg": "",
         "next": "Compass",
         "prev": "Fishing Rod",
         "recipe": [
-            ["", "", ""],
-            ["Iron", "", ""],
-            ["", "Coal", ""]
+            [{}, {}, {}],
+            [{"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {}, {}],
+            [{}, {"ingredient": "Coal", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/58/Coal_JE4_BE3.png/revision/latest/thumbnail/width/360/height/360?cb=20230625214010"}, {}]
         ]
    },
    {
@@ -330,13 +310,12 @@ tools = [
         "desc": "Points to the spawn point.",
         "madeof": ["Iron Ingot", "Redstone"],
         "makes": [],
-        "recipeimg": "",
         "next": "Bucket",
         "prev": "Flint & Steel",
         "recipe": [
-            ["", "Iron", ""],
-            ["Iron", "Redstone", "Iron"],
-            ["", "Iron", ""]
+            [{}, {"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {}],
+            [{"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {"ingredient": "Redstone", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e1/Redstone_Dust_JE2_BE2.png/revision/latest?cb=20210427032319"}, {"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}],
+            [{}, {"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {}]
         ]
    },
    {
@@ -345,13 +324,12 @@ tools = [
         "desc": "Used to transport water, lava, and milk.",
         "madeof": ["Iron Ingot"],
         "makes": [],
-        "recipeimg": "",
         "next": "Shears",
         "prev": "Compass",
         "recipe": [
-            ["", "", ""],
-            ["Iron", "", "Iron"],
-            ["", "Iron", ""]
+            [{}, {}, {}],
+            [{"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {}, {"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}],
+            [{}, {"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {}]
         ]
    },
    {
@@ -360,13 +338,12 @@ tools = [
         "desc": "Used to collect wool from sheep and leaves from trees.",
         "madeof": ["Iron Ingot"],
         "makes": [],
-        "recipeimg": "",
         "next": "",
         "prev": "Bucket",
         "recipe": [
-            ["", "", ""],
-            ["", "Iron", ""],
-            ["Iron", "", ""]
+            [{}, {}, {}],
+            [{}, {"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {}],
+            [{"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {}, {}]
         ]
    }
 ]
@@ -375,16 +352,15 @@ defense = [
     {
         "name": "Helmet",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c5/Leather_Cap_%28item%29_JE4_BE3.png/revision/latest?cb=20190910050904",
-        "desc": "Head armor.",
-        "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "desc": "Head armor. Durability varies depending on type of helmet (Wooden, Stone, Iron, Gold, Diamond, Turtle Shell). Turtle shell helmet gives the player water breathing effect.",
+        "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond", "Scute"],
         "makes": [],
-        "recipeimg": "",
         "next": "Chestplate",
         "prev": "",
         "recipe": [
-            ["Leather", "Leather", "Leather"],
-            ["Leather", "", "Leather"],
-            ["", "", ""]
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}],
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}],
+            [{}, {}, {}]
         ]
    },
    {
@@ -393,13 +369,12 @@ defense = [
         "desc": "Chest armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "",
         "next": "Leggings",
         "prev": "Helmet",
         "recipe": [
-            ["Leather", "", "Leather"],
-            ["Leather", "Leather", "Leather"],
-            ["Leather", "Leather", "Leather"]
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}],
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}],
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}]
         ]
    },
    {
@@ -408,13 +383,12 @@ defense = [
         "desc": "Leg armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "",
         "next": "Boots",
         "prev": "Chestplate",
         "recipe": [
-            ["Leather", "Leather", "Leather"],
-            ["Leather", "", "Leather"],
-            ["Leather", "", "Leather"]
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}],
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}],
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}]
         ]
    },
    {
@@ -423,28 +397,26 @@ defense = [
         "desc": "Foot armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "",
         "next": "Sword",
         "prev": "Leggings",
         "recipe": [
-            ["", "", ""],
-            ["Leather", "", "Leather"],
-            ["Leather", "", "Leather"]
+            [{}, {}, {}],
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}],
+            [{"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}, {}, {"ingredient": "Leather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c2/Leather_JE1_BE1.png/revision/latest?cb=20200130100649"}]
         ]
    },
    {
         "name": "Sword",
         "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d5/Wooden_Sword_JE2_BE2.png/revision/latest/scale-to-width/360?cb=20200217235747",
-        "desc": "Deal damage to mobs and other players.",
-        "madeof": ["Stick", "Wooden Planks", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "desc": "Deal damage to mobs and other players. Durability and Damage varies depending on type of Sword (Wooden, Stone, Iron, Gold, Diamond).",
+        "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
         "makes": [],
-        "recipeimg": "",
         "next": "Bow",
         "prev": "Boots",
         "recipe": [
-            ["", "Wooden Plank", ""],
-            ["", "Wooden Plank", ""],
-            ["", "Stick", ""]
+            [{}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}]
         ]
    },
    {
@@ -453,13 +425,12 @@ defense = [
         "desc": "Used to shoot arrows that deal damage to mobs and other players.",
         "madeof": ["Stick", "String"],
         "makes": [],
-        "recipeimg": "",
         "next": "Arrow",
         "prev": "Sword",
         "recipe": [
-            ["String", "Stick", ""],
-            ["String", "", "Stick"],
-            ["String", "Stick", ""]
+            [{"ingredient": "String", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c0/String_JE1_BE1.png/revision/latest?cb=20200128023538"}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}],
+            [{"ingredient": "String", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c0/String_JE1_BE1.png/revision/latest?cb=20200128023538"}, {}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}],
+            [{"ingredient": "String", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c0/String_JE1_BE1.png/revision/latest?cb=20200128023538"}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}]
         ]
    },
    {
@@ -468,13 +439,12 @@ defense = [
         "desc": "Ammunition for bows.",
         "madeof": ["Stick", "Flint", "Feather"],
         "makes": [],
-        "recipeimg": "",
         "next": "Shield",
         "prev": "Bow",
         "recipe": [
-            ["", "Coal", ""],
-            ["", "Stick", ""],
-            ["", "Feather", ""]
+            [{}, {"ingredient": "Coal", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/58/Coal_JE4_BE3.png/revision/latest/thumbnail/width/360/height/360?cb=20230625214010"}, {}],
+            [{}, {"ingredient": "Stick", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20200128023441"}, {}],
+            [{}, {"ingredient": "Feather", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e2/Feather_JE3_BE2.png/revision/latest/thumbnail/width/360/height/360?cb=20190430052113"}, {}]
         ]
    },
    {
@@ -483,28 +453,12 @@ defense = [
         "desc": "Protects player against attack.",
         "madeof": ["Wooden Plank", "Iron"],
         "makes": [],
-        "recipeimg": "",
-        "next": "Scute",
+        "next": "",
         "prev": "Arrow",
         "recipe": [
-            ["Wooden Plank", "Iron", "Wooden Plank"],
-            ["Wooden Plank", "Wooden Plank", "Wooden Plank"],
-            ["", "Wooden Plank", ""]
-        ]
-   },
-   {
-        "name": "Scute",
-        "img": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/cc/Scute_JE1_BE1.png/revision/latest/thumbnail/width/360/height/360?cb=20190403193903",
-        "desc": "Helmet that gives the player water breathing effect.",
-        "madeof": ["Turtle Shell"],
-        "makes": [],
-        "recipeimg": "",
-        "next": "",
-        "prev": "Shield",
-        "recipe": [
-            ["Turtle Shell", "Turtle Shell", "Turtle Shell"],
-            ["Turtle Shell", "", "Turtle Shell"],
-            ["", "", ""]
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Iron Ingot", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest?cb=20230613175240"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}],
+            [{}, {"ingredient": "Wooden Plank", "pic": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Oak_Planks_JE6_BE3.png/revision/latest?cb=20200317041640"}, {}]
         ]
    }
 ]
