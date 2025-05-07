@@ -7,17 +7,17 @@
     
     <div class="crafting-table-container">
         <img src="/data/crafting_table_top.png" alt="Crafting Table" class="crafting-table-bg">
-        <div class="crafting-grid">
+        <div class="crafting-grid" id="craftingGrid">
             {% for i in range(9) %}
-            <div class="crafting-slot" ondrop="drop(event)" ondragover="allowDrop(event)" data-index="{{ i }}"></div>
+            <div class="crafting-slot" data-index="{{ i }}"></div>
             {% endfor %}
         </div>
     </div>
     
     <div class="ingredients-grid">
         {% for ingredient in ingredients %}
-        <div class="ingredient" draggable="true" ondragstart="drag(event)" id="{{ ingredient }}">
-            <img src="/data/{{ ingredient }}.png" alt="{{ ingredient }}" class="ingredient-image">
+        <div class="ingredient" draggable="true" ondragstart="drag(event)" id="ingredient-{{ loop.index }}" data-ingredient="{{ ingredient.name }}">
+            <img src="{{ ingredient.img }}" alt="{{ ingredient.name }}" class="ingredient-image" draggable="false">
         </div>
         {% endfor %}
     </div>
@@ -25,7 +25,12 @@
     <div class="button-container">
         <button class="home-button" onclick="window.location.href='/'">Home</button>
         <button class="submit-button" onclick="verifyRecipe()">Submit Build</button>
+        <button id="quizButton" onclick="handleQuizButtonClick()">Take Quiz</button>
     </div>
+</div>
+
+<div id="popup" class="popup-notification" style="display:none;">
+    <span id="popup-message"></span>
 </div>
 
 <style>
@@ -68,6 +73,7 @@
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
+        pointer-events: none;
     }
     
     .ingredients-grid {
@@ -139,37 +145,68 @@
         background-color: #45a049;
         transform: translateY(-2px);
     }
+
+    .popup-notification {
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        padding: 32px 48px;
+        font-size: 1.5em;
+        z-index: 9999;
+        color: #333;
+        border: 3px solid #8B4513;
+        min-width: 300px;
+        text-align: center;
+    }
+    .popup-notification.success { border-color: #4CAF50; color: #4CAF50; }
+    .popup-notification.error { border-color: #FF0000; color: #FF0000; }
 </style>
 
 <script>
-    function allowDrop(ev) {
-        ev.preventDefault();
-    }
-    
     function drag(ev) {
         ev.dataTransfer.setData("text", ev.target.id);
     }
-    
-    function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
-        var draggedElement = document.getElementById(data);
-        var clone = draggedElement.cloneNode(true);
-        clone.draggable = false;
-        clone.style.cursor = 'default';
-        ev.target.innerHTML = '';
-        ev.target.appendChild(clone);
-    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.crafting-slot').forEach(function(slot) {
+            slot.addEventListener('dragover', function(ev) {
+                ev.preventDefault();
+            });
+            slot.addEventListener('drop', function(ev) {
+                ev.preventDefault();
+                let slotDiv = ev.currentTarget;
+                var data = ev.dataTransfer.getData("text");
+                var draggedElement = document.getElementById(data);
+                if (slotDiv.children.length === 0) {
+                    var clone = draggedElement.cloneNode(true);
+                    clone.draggable = false;
+                    clone.style.cursor = 'default';
+                    clone.setAttribute('data-ingredient', draggedElement.getAttribute('data-ingredient'));
+                    slotDiv.innerHTML = '';
+                    slotDiv.appendChild(clone);
+                }
+            });
+            slot.addEventListener('click', function() {
+                slot.innerHTML = '';
+            });
+        });
+    });
 
     function verifyRecipe() {
         const slots = document.querySelectorAll('.crafting-slot');
         const recipe = Array.from(slots).map(slot => {
             const ingredient = slot.firstChild;
-            return ingredient ? ingredient.id : '';
+            if (ingredient && ingredient.dataset.ingredient) {
+                return ingredient.dataset.ingredient;
+            }
+            return '';
         });
 
-        // Send recipe to server for verification
-        fetch('/verify_recipe', {
+        fetch('/quiz/submit_craft', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -181,17 +218,51 @@
         })
         .then(response => response.json())
         .then(data => {
-            if (data.correct) {
-                alert('Correct recipe! Well done!');
-                window.location.href = '/quiz';
-            } else {
-                alert('Incorrect recipe. Try again!');
-            }
+            var popup = document.getElementById('popup');
+            var msg = document.getElementById('popup-message');
+            popup.classList.remove('success', 'error');
+            popup.classList.add(data.popup_type);
+            msg.textContent = data.popup_message;
+            popup.style.display = 'block';
+            setTimeout(function() {
+                window.location.href = data.redirect;
+            }, 1500);
         })
         .catch(error => {
-            console.error('Error:', error);
             alert('An error occurred while verifying the recipe.');
         });
+    }
+
+    function showNotification(message, type) {
+        var popup = document.createElement('div');
+        popup.className = 'popup-notification ' + type;
+        popup.innerHTML = '<span>' + message + '</span>';
+        document.body.appendChild(popup);
+        setTimeout(function() {
+            popup.remove();
+        }, 1800);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var quizNavLink = document.getElementById('quizNavLink');
+        var totalVisited = parseInt(document.getElementById('totalVisited').textContent, 10);
+        quizNavLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (totalVisited < 32) {
+                showNotification("You must visit all 32 items before taking the quiz!", "error");
+            } else {
+                window.location.href = "/quiz";
+            }
+        });
+    });
+
+    function handleQuizButtonClick() {
+        var visitedCount = parseInt(document.getElementById('visitedCount').textContent, 10);
+        if (visitedCount < 32) {
+            showNotification("You must visit all 32 items before taking the quiz!", "error");
+        } else {
+            window.location.href = "/quiz";
+        }
     }
 </script>
 {% endblock %} 

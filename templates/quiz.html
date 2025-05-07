@@ -14,6 +14,11 @@
     </div>
 </div>
 
+<div id="popup" class="popup-notification" style="display:none;">
+    <span id="popup-message"></span>
+</div>
+
+
 <style>
     .description {
         font-size: 1.5em;
@@ -35,5 +40,39 @@
         max-width: 400px;
         margin: 0 auto;
     }
+
+    .popup-notification {
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        padding: 32px 48px;
+        font-size: 2em;
+        z-index: 9999;
+        color: #333;
+        border: 3px solid #8B4513;
+        min-width: 300px;
+        text-align: center;
+    }
+    .popup-notification.success { border-color: #4CAF50; color: #4CAF50; }
+    .popup-notification.error { border-color: #FF0000; color: #FF0000; }
 </style>
+
+<script>
+    {% if show_popup %}
+        document.addEventListener('DOMContentLoaded', function() {
+            var popup = document.getElementById('popup');
+            var msg = document.getElementById('popup-message');
+            popup.classList.add('{{ popup_type }}');
+            msg.textContent = '{{ popup_message }}';
+            popup.style.display = 'block';
+            setTimeout(function() {
+                window.location.href = "{{ next_url }}";
+            }, 1500);
+        });
+    {% endif %}
+</script>
 {% endblock %} 

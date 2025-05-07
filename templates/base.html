@@ -178,6 +178,25 @@
             font-size: 1.2em;
             margin: 0;
         }
+
+        .popup-notification {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            padding: 32px 48px;
+            font-size: 1.5em;
+            z-index: 9999;
+            color: #333;
+            border: 3px solid #8B4513;
+            min-width: 300px;
+            text-align: center;
+        }
+        .popup-notification.success { border-color: #4CAF50; color: #4CAF50; }
+        .popup-notification.error { border-color: #FF0000; color: #FF0000; }
     </style>
 </head>
 <body>
@@ -194,12 +213,49 @@
             <a href="/category/basics" class="nav-link">Basic Items</a>
             <a href="/category/tools" class="nav-link">Tools</a>
             <a href="/category/defense" class="nav-link">Defense</a>
-            <a href="/quiz" class="nav-link">Quiz</a>
+            <a href="#" class="nav-link" id="quizNavLink">Quiz</a>
         </div>
     </div>
 
     <div class="container">
         {% block content %}{% endblock %}
     </div>
+
+    <script>
+    function showNotification(message, type, callback) {
+        var popup = document.createElement('div');
+        popup.className = 'popup-notification ' + type;
+        popup.innerHTML = '<span>' + message + '</span>';
+        document.body.appendChild(popup);
+        setTimeout(function() {
+            popup.remove();
+            if (callback) callback();
+        }, 1800);
+    }
+
+    function handleQuizButtonClick() {
+        // Try to get visited count from either index.html or base.html
+        var visitedCountElem = document.getElementById('visitedCount') || document.getElementById('totalVisited');
+        var visitedCount = parseInt(visitedCountElem ? visitedCountElem.textContent : "0", 10);
+        if (visitedCount < 32) {
+            showNotification("Complete your learning before taking the quiz!", "error");
+        } else {
+            showNotification("It's time to complete the quiz!", "success", function() {
+                window.location.href = "/quiz";
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var quizNavLink = document.getElementById('quizNavLink');
+        if (quizNavLink) {
+            quizNavLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleQuizButtonClick();
+            });
+        }
+    });
+    </script>
 </body>
 </html> 
+

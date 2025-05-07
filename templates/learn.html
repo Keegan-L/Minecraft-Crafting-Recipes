@@ -1,22 +1,57 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="welcome-text">
+    <h1>
+        {% if category == 'basics' %}BASIC ITEMS{% elif category == 'tools' %}TOOL ITEMS{% elif category == 'defense' %}DEFENSE ITEMS{% endif %}
+    </h1>
+</div>
+<div class="progress-counter">
+    Progress: <span id="visitedCount">{{ visited_count }}</span>/{{ total_items }} items visited
+</div>
+
 <div class="card">
-    <h1>{{ item.name }}</h1>
+    <img src="{{ item.img }}" alt="{{ item.name }}" style="width: 100px; height: 100px; display: block; margin: 0 auto 16px auto;">
+    <h1 style="text-align:center;">{{ item.name }}</h1>
     <p>{{ item.desc }}</p>
     
     <h3>Made from:</h3>
-    <ul>
+    <div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;">
         {% for material in item.madeof %}
-        <li>
+        <div style="text-align: center;">
             {% if material in craftable_items %}
-            <a href="/learn/{{ material }}" class="craftable-ingredient">{{ material }}</a>
+            <a href="/learn/{{ material }}" class="craftable-ingredient">
+                <img src="{{ item_images[material] if item_images and material in item_images else '/data/placeholder.png' }}" alt="{{ material }}" style="width: 48px; height: 48px; display: block; margin: 0 auto 6px auto;">
+                <div>{{ material }}</div>
+            </a>
             {% else %}
-            {{ material }}
+            <img src="{{ ingredient_images[material] if ingredient_images and material in ingredient_images else '/data/placeholder.png' }}" alt="{{ material }}" style="width: 48px; height: 48px; display: block; margin: 0 auto 6px auto;">
+            <div>{{ material }}</div>
             {% endif %}
-        </li>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
+    
+    <!-- Crafting Recipe Grid -->
+    <h3 style="margin-top: 32px;">Crafting Recipe:</h3>
+    <div style="display: flex; justify-content: center; margin-bottom: 24px;">
+        <table style="border-collapse: collapse; background: #f5ecd7;">
+            {% for row in item.recipe %}
+            <tr>
+                {% for cell in row %}
+                <td style="width: 56px; height: 56px; border: 1px solid #d2b48c; text-align: center; vertical-align: middle; background: #fff8e1;">
+                    {% if cell and cell.ingredient %}
+                        <img src="{{ cell.pic if cell.pic else '/data/placeholder.png' }}" alt="{{ cell.ingredient }}" style="width: 40px; height: 40px;">
+                    {% else %}
+                        <div style="width: 40px; height: 40px;"></div>
+                    {% endif %}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <!-- End Crafting Recipe Grid -->
     
     <div class="nav-buttons">
         {% if item.prev %}

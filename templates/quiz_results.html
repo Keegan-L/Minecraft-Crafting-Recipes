@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card" style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <h1>Quiz Results: {{ score }}/5</h1>
+    <div style="margin: 30px 0;">
+        {% for result in results %}
+        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 18px;">
+            <img src="{{ result.img }}" alt="{{ result.name }}" style="width: 48px; height: 48px; margin-right: 24px;">
+            <span style="font-size: 1.3em; margin-right: 24px;">{{ result.name }}</span>
+            {% if result.fully_correct %}
+                <span style="color: #4CAF50; font-size: 1.2em;">CORRECT</span>
+            {% else %}
+                <span style="color: #FF0000; font-size: 1.2em;">INCORRECT</span>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <button onclick="window.location.href='/'" style="padding: 12px 32px; font-size: 1.1em;">DONE</button>
+</div>
+{% endblock %} 
