@@ -32,6 +32,12 @@
         {% endfor %}
     </div>
     
+    {% if item.Variants %}
+    <div style="margin-top: 18px; text-align: center;">
+        <strong>Variants:</strong> {{ item.Variants }}
+    </div>
+    {% endif %}
+    
     <!-- Crafting Recipe Grid -->
     <h3 style="margin-top: 32px;">Crafting Recipe:</h3>
     <div style="display: flex; justify-content: center; margin-bottom: 24px;">
@@ -73,6 +79,20 @@
     <button onclick="window.location.href='/'">Back to Home</button>
 </div>
 
+<!-- Quiz Notification Modal -->
+<div id="quizNotification" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>🎉 Congratulations! 🎉</h2>
+        <p>You've completed all items in this category!</p>
+        <p>Ready to test your knowledge on all items?</p>
+        <div class="modal-buttons">
+            <button onclick="window.location.href='/quiz'" class="primary-button">Take Quiz</button>
+            <button onclick="closeModal()" class="secondary-button">Not Now</button>
+            <button onclick="window.location.href='/'" class="secondary-button">Home</button>
+        </div>
+    </div>
+</div>
+
 <style>
     .craftable-ingredient {
         color: #5D4037;
@@ -83,5 +103,76 @@
     .craftable-ingredient:hover {
         color: #8B4513;
     }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff8e1;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-buttons {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .primary-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .secondary-button {
+        background-color: #f5f5f5;
+        color: #333;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .primary-button:hover {
+        background-color: #45a049;
+    }
+
+    .secondary-button:hover {
+        background-color: #e7e7e7;
+    }
 </style>
+
+<script>
+    function checkProgress() {
+        const visitedCount = parseInt(document.getElementById('visitedCount').textContent);
+        const totalItems = Number("{{ total_items }}");
+        if (visitedCount === totalItems) {
+            document.getElementById('quizNotification').style.display = 'flex';
+        }
+    }
+    function closeModal() {
+        document.getElementById('quizNotification').style.display = 'none';
+    }
+    // Always check progress when page loads
+    window.onload = checkProgress;
+</script>
 {% endblock %} 

@@ -2,6 +2,8 @@ from flask import Flask, render_template, Response, request, jsonify, send_from_
 import os
 import random
 from copy import deepcopy
+from datetime import datetime
+import json
 
 app = Flask(__name__)
 app.secret_key = 'minecraft_crafting_secret_key'  # Required for session
@@ -50,7 +52,7 @@ item_images = {
     "Slab": "https://minecraft.wiki/images/Oak_Slab_JE5_BE2.png?c2c2a",
     "Stairs": "https://minecraft.wiki/images/Oak_Stairs_%28N%29_JE7_BE6.png?8a080",
     "Door": "https://minecraft.wiki/images/Oak_Door_%28item%29_JE4_BE3.png?2b2ba",
-    "Sign": "https://minecraft.wiki/w/Sign#/media/File:Oak_Sign_(0).png",
+    "Sign": "https://www.minecraft-crafting.net/app/src/Basic/img/img_sign.png",
     "Bed": "https://minecraft.wiki/images/White_Bed_JE3_BE3.png?fcfca",
     "Pickaxe": "https://minecraft.wiki/images/Wooden_Pickaxe_JE2_BE2.png?b7e2a",
     "Axe": "https://minecraft.wiki/images/Wooden_Axe_JE2_BE2.png?7a7a2",
@@ -68,7 +70,7 @@ item_images = {
     "Boots": "https://minecraft.wiki/images/Leather_Boots_%28item%29_JE4_BE3.png?fcfca",
     "Sword": "https://minecraft.wiki/images/Wooden_Sword_JE2_BE2.png?b7e2a",
     "Bow": "https://minecraft.wiki/images/Bow_JE2_BE1.png?7a7a2",
-    "Arrow": "https://minecraft.wiki/w/Arrow#/media/File:Arrow_(item)_JE1_BE1.png",
+    "Arrow": "https://www.minecraft-crafting.net/app/src/Defence/img/img_arrow.png",
     "Shield": "https://minecraft.wiki/images/Shield_JE2_BE1.png?b6e2a"
 }
 
@@ -100,7 +102,7 @@ basics = [
         "madeof": ["Log"],
         "makes": ["Stick", "Crafting Table", "Chest"],
         "next": "Stick",
-        "prev": "Shield",
+        "prev": "Wooden Shield",
         "recipe": [
             [{}, {}, {}],
             [{}, {"ingredient": "Log", "pic": get_ingredient_img("Log")}, {}],
@@ -224,6 +226,7 @@ basics = [
         "img": get_item_img("Slab"),
         "desc": "Used to create gradual slopes. Can be made of many different building materials (Wooden Plank, Cobblestone, Brick, Quartz, etc.).",
         "madeof": ["Wooden Plank"],
+        "Variants": "Wooden Plank can be substituted with Cobblestone, Brick, Quartz, and other materials.",
         "makes": [],
         "next": "Wooden Stairs",
         "prev": "Boat",
@@ -298,6 +301,7 @@ tools = [
         "img": get_item_img("Pickaxe"),
         "desc": "Used to mine stone blocks and ores. Durability and Damage varies depending on type of Pickaxe (Wooden, Stone, Iron, Gold, Diamond).",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "Variants": "Wooden Plank can be substituted with Cobblestone, Iron Ingot, Gold Ingot, or Diamond.",
         "makes": [],
         "next": "Wooden Axe",
         "prev": "Bed",
@@ -312,6 +316,7 @@ tools = [
         "img": get_item_img("Axe"),
         "desc": "Used to chop wood blocks faster. Durability and Damage varies depending on type of Axe (Wooden, Stone, Iron, Gold, Diamond).",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "Variants": "Wooden Plank can be substituted with Cobblestone, Iron Ingot, Gold Ingot, or Diamond.",
         "makes": [],
         "next": "Wooden Shovel",
         "prev": "Wooden Pickaxe",
@@ -325,7 +330,8 @@ tools = [
         "name": "Wooden Shovel",
         "img": get_item_img("Shovel"),
         "desc": "Used to dig sand, gravel, dirt, grass, and snow faster. Durability and Damage varies depending on type of Shovel (Wooden, Stone, Iron, Gold, Diamond).",
-        "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingots", "Gold Ingots", "Diamonds"],
+        "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "Variants": "Wooden Plank can be substituted with Cobblestone, Iron Ingot, Gold Ingot, or Diamond.",
         "makes": [],
         "next": "Wooden Hoe",
         "prev": "Wooden Axe",
@@ -339,7 +345,8 @@ tools = [
         "name": "Wooden Hoe",
         "img": get_item_img("Hoe"),
         "desc": "Used to till dirt blocks in preparation for growing crops. Durability and Damage varies depending on type of Hoe (Wooden, Stone, Iron, Gold, Diamond).",
-        "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingots", "Gold Ingots", "Diamonds"],
+        "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "Variants": "Wooden Plank can be substituted with Cobblestone, Iron Ingot, Gold Ingot, or Diamond.",
         "makes": [],
         "next": "Fishing Rod",
         "prev": "Wooden Shovel",
@@ -441,6 +448,7 @@ defense = [
         "img": get_item_img("Helmet"),
         "desc": "Head armor. Durability varies depending on type of helmet (Wooden, Stone, Iron, Gold, Diamond, Turtle Shell). Turtle shell helmet gives the player water breathing effect.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond", "Scute"],
+        "Variants": "Leather can be substituted with Iron Ingot, Gold Ingot, Diamond, or Scute.",
         "makes": [],
         "next": "Leather Chestplate",
         "prev": "Clock",
@@ -455,6 +463,7 @@ defense = [
         "img": get_item_img("Chestplate"),
         "desc": "Chest armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "Variants": "Leather can be substituted with Iron Ingot, Gold Ingot, or Diamond.",
         "makes": [],
         "next": "Leather Leggings",
         "prev": "Leather Helmet",
@@ -469,6 +478,7 @@ defense = [
         "img": get_item_img("Leggings"),
         "desc": "Leg armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "Variants": "Leather can be substituted with Iron Ingot, Gold Ingot, or Diamond.",
         "makes": [],
         "next": "Leather Boots",
         "prev": "Leather Chestplate",
@@ -483,6 +493,7 @@ defense = [
         "img": get_item_img("Boots"),
         "desc": "Foot armor.",
         "madeof": ["Leather", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "Variants": "Leather can be substituted with Iron Ingot, Gold Ingot, or Diamond.",
         "makes": [],
         "next": "Wooden Sword",
         "prev": "Leather Leggings",
@@ -497,6 +508,7 @@ defense = [
         "img": get_item_img("Sword"),
         "desc": "Deal damage to mobs and other players. Durability and Damage varies depending on type of Sword (Wooden, Stone, Iron, Gold, Diamond).",
         "madeof": ["Stick", "Wooden Plank", "Cobblestone", "Iron Ingot", "Gold Ingot", "Diamond"],
+        "Variants": "Wooden Plank can be substituted with Cobblestone, Iron Ingot, Gold Ingot, or Diamond.",
         "makes": [],
         "next": "Wooden Bow",
         "prev": "Leather Boots",
@@ -549,6 +561,30 @@ defense = [
         ]
    }
 ]
+
+# Add these constants after other constants
+SCORES_FILE = 'data/scores.json'
+
+# Add these functions before the routes
+def load_scores():
+    if os.path.exists(SCORES_FILE):
+        with open(SCORES_FILE, 'r') as f:
+            return json.load(f)
+    return []
+
+def save_score(score):
+    scores = load_scores()
+    scores.append({
+        'score': score,
+        'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    })
+    # Sort scores by score (descending) and date (descending)
+    scores.sort(key=lambda x: (-x['score'], x['date']))
+    # Keep only top 10 scores
+    scores = scores[:10]
+    with open(SCORES_FILE, 'w') as f:
+        json.dump(scores, f)
+    return scores
 
 # ROUTES
 
@@ -855,11 +891,39 @@ def quiz_results():
             'fully_correct': ans.get('fully_correct', False),
             'selected': ans['selected']
         })
+    
+    score = sum(1 for a in quiz_answers if a.get('fully_correct'))
+    top_scores = save_score(score)
+    
+    # Clear quiz session data
+    session.pop('quiz_items', None)
+    session.pop('quiz_index', None)
+    session.pop('quiz_answers', None)
+    session.pop('quiz_state', None)
+    
     return render_template('quiz_results.html',
         results=results,
-        score=sum(1 for a in quiz_answers if a.get('fully_correct')),
+        score=score,
+        top_scores=top_scores,
         visited_items=session.get('visited_items', [])
     )
+
+@app.route('/quiz/next_craft')
+def quiz_next_craft():
+    quiz_items = session.get('quiz_items', [])
+    quiz_index = session.get('quiz_index', 0)
+    quiz_answers = session.get('quiz_answers', [])
+    # Mark the current crafting as skipped (crafted: False, fully_correct: False)
+    if quiz_index > 0 and len(quiz_answers) >= quiz_index:
+        quiz_answers[quiz_index-1]['crafted'] = False
+        quiz_answers[quiz_index-1]['fully_correct'] = False
+        session['quiz_answers'] = quiz_answers
+    session['quiz_index'] = quiz_index + 1
+    session['quiz_state'] = 'question'
+    if session['quiz_index'] >= 5:
+        return redirect('/quiz/results')
+    else:
+        return redirect('/quiz/next')
 
 def is_shapeless(recipe_grid):
     # Heuristic: if all non-empty ingredients are the same and contiguous, treat as shaped; else, shapeless
@@ -933,6 +997,10 @@ def match_shaped(user_grid, correct_grid, item_name):
 def reset_session():
     session.clear()
     return redirect('/')
+
+@app.route('/api/top-scores')
+def get_top_scores():
+    return jsonify(load_scores())
 
 if __name__ == '__main__':
    app.run(debug = True, port=5001)

@@ -12,12 +12,26 @@
         </button>
         {% endfor %}
     </div>
+
+    <div class="end-quiz-container">
+        <button class="end-quiz-button" onclick="confirmEndQuiz()">End Quiz</button>
+    </div>
 </div>
 
 <div id="popup" class="popup-notification" style="display:none;">
     <span id="popup-message"></span>
 </div>
 
+<div id="endQuizModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>End Quiz?</h2>
+        <p>Are you sure you want to end the quiz? Your progress will be lost.</p>
+        <div class="modal-buttons">
+            <button onclick="endQuiz()" class="primary-button">Yes, End Quiz</button>
+            <button onclick="closeEndQuizModal()" class="secondary-button">No, Continue</button>
+        </div>
+    </div>
+</div>
 
 <style>
     .description {
@@ -41,6 +55,26 @@
         margin: 0 auto;
     }
 
+    .end-quiz-container {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+
+    .end-quiz-button {
+        padding: 12px 24px;
+        font-size: 1.1em;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .end-quiz-button:hover {
+        background-color: #d32f2f;
+    }
+
     .popup-notification {
         position: fixed;
         top: 20%;
@@ -59,9 +93,68 @@
     }
     .popup-notification.success { border-color: #4CAF50; color: #4CAF50; }
     .popup-notification.error { border-color: #FF0000; color: #FF0000; }
+
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff8e1;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-buttons {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .primary-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .secondary-button {
+        background-color: #f5f5f5;
+        color: #333;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 </style>
 
 <script>
+    function confirmEndQuiz() {
+        document.getElementById('endQuizModal').style.display = 'flex';
+    }
+
+    function closeEndQuizModal() {
+        document.getElementById('endQuizModal').style.display = 'none';
+    }
+
+    function endQuiz() {
+        window.location.href = '/';
+    }
+
     {% if show_popup %}
         document.addEventListener('DOMContentLoaded', function() {
             var popup = document.getElementById('popup');

@@ -14,6 +14,11 @@
         </div>
     </div>
     
+    <!-- Clear Button -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 18px; gap: 12px;">
+        <button class="clear-button" onclick="clearMatrix()">CLEAR GRID</button>
+    </div>
+
     <div class="ingredients-grid">
         {% for ingredient in ingredients %}
         <div class="ingredient" draggable="true" ondragstart="drag(event)" id="ingredient-{{ loop.index }}" data-ingredient="{{ ingredient.name }}">
@@ -23,9 +28,9 @@
     </div>
 
     <div class="button-container">
-        <button class="home-button" onclick="window.location.href='/'">Home</button>
+        <button class="end-quiz-button" onclick="window.location.href='/'">End Quiz</button>
         <button class="submit-button" onclick="verifyRecipe()">Submit Build</button>
-        <button id="quizButton" onclick="handleQuizButtonClick()">Take Quiz</button>
+        <button class="skip-button" onclick="window.location.href='{{ next_url if next_url else '/' }}'">Skip</button>
     </div>
 </div>
 
@@ -117,7 +122,7 @@
         margin-top: 30px;
     }
 
-    .home-button, .submit-button {
+    .end-quiz-button, .submit-button {
         padding: 15px 30px;
         font-size: 1.2em;
         border: none;
@@ -126,7 +131,7 @@
         transition: all 0.3s;
     }
 
-    .home-button {
+    .end-quiz-button {
         background-color: #8B4513;
         color: white;
     }
@@ -136,7 +141,7 @@
         color: white;
     }
 
-    .home-button:hover {
+    .end-quiz-button:hover {
         background-color: #6B3410;
         transform: translateY(-2px);
     }
@@ -164,6 +169,20 @@
     }
     .popup-notification.success { border-color: #4CAF50; color: #4CAF50; }
     .popup-notification.error { border-color: #FF0000; color: #FF0000; }
+
+    .clear-button {
+        padding: 8px 16px;
+        background: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        letter-spacing: 2px;
+    }
+    .clear-button:hover {
+        background: #d32f2f;
+    }
 </style>
 
 <script>
@@ -190,8 +209,13 @@
                     slotDiv.appendChild(clone);
                 }
             });
-            slot.addEventListener('click', function() {
-                slot.innerHTML = '';
+        });
+
+        // Add event listener to prevent quiz navigation
+        document.querySelectorAll('a[href="/quiz"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification("You cannot start a new quiz while in the middle of one!", "error");
             });
         });
     });
@@ -243,26 +267,16 @@
         }, 1800);
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var quizNavLink = document.getElementById('quizNavLink');
-        var totalVisited = parseInt(document.getElementById('totalVisited').textContent, 10);
-        quizNavLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (totalVisited < 32) {
-                showNotification("You must visit all 32 items before taking the quiz!", "error");
-            } else {
-                window.location.href = "/quiz";
-            }
-        });
-    });
+    function handleQuizButtonClick(e) {
+        if (e) e.preventDefault();
+        showNotification("You cannot start a new quiz while in the middle of one!", "error");
+        return false;
+    }
 
-    function handleQuizButtonClick() {
-        var visitedCount = parseInt(document.getElementById('visitedCount').textContent, 10);
-        if (visitedCount < 32) {
-            showNotification("You must visit all 32 items before taking the quiz!", "error");
-        } else {
-            window.location.href = "/quiz";
-        }
+    function clearMatrix() {
+        document.querySelectorAll('.crafting-slot').forEach(function(slot) {
+            slot.innerHTML = '';
+        });
     }
 </script>
 {% endblock %} 
