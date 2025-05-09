@@ -64,15 +64,10 @@
     <div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;">
         {% for material in item.makes %}
         <div style="text-align: center;">
-            {% if material in craftable_items %}
             <a href="/learn/{{ material }}" class="craftable-ingredient">
                 <img src="{{ item_images[material] if item_images and material in item_images else '/data/placeholder.png' }}" alt="{{ material }}" style="width: 48px; height: 48px; display: block; margin: 0 auto 6px auto;">
                 <div>{{ material }}</div>
             </a>
-            {% else %}
-            <img src="{{ ingredient_images[material] if ingredient_images and material in ingredient_images else '/data/placeholder.png' }}" alt="{{ material }}" style="width: 48px; height: 48px; display: block; margin: 0 auto 6px auto;">
-            <div>{{ material }}</div>
-            {% endif %}
         </div>
         {% endfor %}
     </div>
