@@ -541,7 +541,7 @@ defense = [
         "next": "Wooden Shield",
         "prev": "Wooden Bow",
         "recipe": [
-            [{}, {"ingredient": "Coal", "pic": get_ingredient_img("Coal")}, {}],
+            [{}, {"ingredient": "Flint", "pic": get_ingredient_img("Flint")}, {}],
             [{}, {"ingredient": "Stick", "pic": get_ingredient_img("Stick")}, {}],
             [{}, {"ingredient": "Feather", "pic": get_ingredient_img("Feather")}, {}]
         ]
@@ -740,6 +740,8 @@ def check_answer(answer):
     quiz_items = session.get('quiz_items', [])
     quiz_index = session.get('quiz_index', 0)
     quiz_answers = session.get('quiz_answers', [])
+    print("1")
+    print(quiz_answers)
     quiz_state = session.get('quiz_state', 'question')
 
     if not quiz_items or quiz_index >= len(quiz_items):
@@ -787,6 +789,8 @@ def check_answer(answer):
                 next_url='/quiz/next',
                 visited_items=session.get('visited_items', [])
             )
+    print("2")
+    print(quiz_answers)
 
 @app.route('/quiz/next')
 def quiz_next():
@@ -855,8 +859,9 @@ def quiz_submit_craft():
     else:
         is_correct = match_shaped(recipe_grid, correct_recipe, item_name)
 
-    quiz_answers[quiz_index-1]['crafted'] = is_correct
-    quiz_answers[quiz_index-1]['fully_correct'] = quiz_answers[quiz_index-1]['correct'] and is_correct
+    quiz_answers[quiz_index]['crafted'] = is_correct
+    quiz_answers[quiz_index]['fully_correct'] = quiz_answers[quiz_index]['correct'] and is_correct
+
     session['quiz_answers'] = quiz_answers
 
     if is_correct:
@@ -880,6 +885,8 @@ def quiz_submit_craft():
 def quiz_results():
     all_items = basics + tools + defense
     quiz_answers = session.get('quiz_answers', [])
+    for idx, a in enumerate(quiz_answers):
+        print(f"Q{idx+1}: correct={a.get('correct')}, crafted={a.get('crafted')}, fully_correct={a.get('fully_correct')}")
     results = []
     for ans in quiz_answers:
         item = next((i for i in all_items if i['name'] == ans['question']), None)

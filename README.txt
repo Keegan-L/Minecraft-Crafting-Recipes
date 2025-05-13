@@ -17,7 +17,7 @@ Minecraft-Crafting-Recipes repo
 |  |- learn.html - template for /learn pages that show the info for a specific item
 |  |- quiz_results.html - page that displays the quiz results
 |  |- quiz.html - quiz page that prompts the user with questions
-|  |- wrong_answer.html - 
+|  |- wrong_answer.html - not used in the program!
 |
 |- README.txt - this file
 |
