@@ -1,4 +1,4 @@
-This is a website built by Keegan Li, Justin Clarke, and Ainsli Shah using HTML, CSS, and JavaScript.
+This is a website built by Keegan Li, Justin Clarke, and Ainsli Shah using HTML, CSS, Python and JavaScript.
 
 File Structure:
 Minecraft-Crafting-Recipes repo
